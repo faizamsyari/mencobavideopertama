@@ -31,9 +31,8 @@ class LoginApp extends StatelessWidget {
             title: const Text("Login Page"),
             centerTitle: false,
             backgroundColor: Colors.orange.shade900),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: Lebar / 20),
-          child: ListView(
+        body: SingleChildScrollView(
+          child: Column(
             children: [
               Container(
                 margin: EdgeInsets.only(top: Tinggi / 25),
@@ -132,7 +131,11 @@ class LoginApp extends StatelessWidget {
                     style: ButtonStyle(
                         overlayColor:
                             MaterialStateProperty.all(Colors.purple.shade300)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.snackbar(
+                          "INFORMASI PENTING!!", "Anda Memasuki Halaman Daftar",
+                          backgroundColor: Colors.pink);
+                    },
                     child: const Text(
                       "Daftar",
                       style: TextStyle(
@@ -146,7 +149,11 @@ class LoginApp extends StatelessWidget {
                         overlayColor: MaterialStateProperty.all(Colors.purple),
                         backgroundColor:
                             MaterialStateProperty.all(Colors.orange.shade100)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.snackbar("INFORMASI PENTING!!",
+                          "Anda Memasuki Page Lupa Password",
+                          backgroundColor: Colors.green);
+                    },
                     child: const Text(
                       "Lupa Password?",
                       style: TextStyle(
